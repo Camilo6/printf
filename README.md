@@ -8,7 +8,7 @@
 * va_end (man 3 va_end)
 * va_copy (man 3 va_copy)
 ---
-## What it's about
+## What it's about:
 We're creating our own prinft function, it's part of the Holberton School curriculum.
 ---
 ## Authors
