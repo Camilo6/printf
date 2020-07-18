@@ -1,5 +1,5 @@
 # printf
-
+---
 ## What it's about
 We're creating our own prinft function, it's part of the Holberton School curriculum.
 ---
