@@ -1,23 +1,23 @@
-./" This is our man page for the project _printf 
+./" This is our man page for the project _printf
 .TH man 3 "20 July 2020" "0.1" "_printf man page"
 .SH NAME
 .B _printf
 
-.SH SYNOPSIS 
+.SH SYNOPSIS
 #include "holberton.h"
 
 int _printf(const char *
 .I format
 , ...);
 
-.B _printf 
+.B _printf
 .I FORMAT
 
 .SH DESCRIPTION
-The _printf function print argument(s) according to holberton 
+The _printf function print argument(s) according to holberton
 .I format.
 
-The function writes a string with options that are converted to the corresponding type, 
+The function writes a string with options that are converted to the corresponding type,
 depending on the characters following the character '%'.
 
 Prints any parameters assigned to it onto the output screen.
@@ -30,7 +30,7 @@ Prints any parameters assigned to it onto the output screen.
 - %i print an integer in base 10
 
 .SH AUTHOR(S)
-Written by 
+Written by
 .B Juliana Monroy
 ,
 .B Camilo Torres
