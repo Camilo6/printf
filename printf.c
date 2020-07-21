@@ -9,8 +9,9 @@ int _strlen(char *s);
 int _printf(const char *format, ...)
 {
 	int i;
-	int j;
+	int j = 0;
 	char *str;
+	char tmp[2];
 	char buf[1024];
 
 	va_list args;
@@ -21,7 +22,7 @@ int _printf(const char *format, ...)
 	}
 	va_start(args, format);
 
-	for (j = 0, i = 0; format[i]; i++, j++)
+	for (i = 0; format[i]; i++, j++)
 	{
 		if (format[i] != '%')
 		{
@@ -33,7 +34,13 @@ int _printf(const char *format, ...)
 			{
 				return (-1);
 			}
-
+			/**
+			* if (format[i + 1] == '%')
+			{
+				i++;
+				j += _put_char('%');
+			}
+			*/
 			str = get_format(format[++i], args);
 			if (str != NULL)
 			{
@@ -44,7 +51,14 @@ int _printf(const char *format, ...)
 					j++;
 				}
 			}
+			else
+			{
+				tmp[0] = '%';
+				tmp[1] = format[i];
+				_strcpy(buf + j, tmp);
+				j += 1;
 
+			}
 		}
 	}
 	buf[j] = '\0';
