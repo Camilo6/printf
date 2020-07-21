@@ -8,20 +8,20 @@ int _strlen(char *s);
  */
 int _printf(const char *format, ...)
 {
-	int i;
+	va_list args;
+
+	int i = 0;
 	int j = 0;
 	char *str;
 	char tmp[2];
 	char buf[2048];
 
-	va_list args;
+	va_start(args, format);
 
-	if (format == NULL)
+	if (!format || format[i] == '\n' || format[i] == '\0' || !format[i + 1])
 	{
 		return (-1);
 	}
-	va_start(args, format);
-
 	for (i = 0; format[i]; i++, j++)
 	{
 		if (format[i] != '%')
@@ -42,6 +42,7 @@ int _printf(const char *format, ...)
 				if (str == '\0')
 				{
 					j++;
+					break;
 				}
 			}
 			else
