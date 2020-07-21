@@ -1,4 +1,5 @@
 #include "holberton.h"
+char *sp_number(va_list args);
 /**
  * get_format - fygh
  * @format: ghjk
@@ -15,10 +16,8 @@ char *get_format(const char format, va_list args)
 		{'c', sp_char},
 		{'%', sp_percentsign},
 		{'s', sp_string},
-		/**
-		 * {'d', sp_number },
-		 * {'i', sp_number },
-		 */
+		{'d', sp_number},
+		{'i', sp_number},
 		/**
 		 *
 		 *,
@@ -37,11 +36,11 @@ char *get_format(const char format, va_list args)
 		if (formato[j].form == operator)
 		{
 			s = (formato[j].op(args));
-			return (s);
 			if (s == NULL)
 			{
 				return (NULL);
 			}
+			return (s);
 		}
 	}
 	return (0);
