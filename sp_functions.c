@@ -34,15 +34,11 @@ char *sp_percentsign(va_list args __attribute__((unused)))
  */
 char *sp_char(va_list args)
 {
-	char a = va_arg(args, int);
-	char *str = malloc(sizeof(char) * 1024);
+	char *x;
+	char str[2];
 
-	if (str == NULL)
-	{
-		free(str);
-		return (NULL);
-	}
-	str[0] = a;
-	free(str);
-	return (str);
+	str[0] = va_arg(args, int);
+	str[1] = '\0';
+	x = str;
+	return (x);
 }
