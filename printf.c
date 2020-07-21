@@ -30,17 +30,11 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			if (format[i + 1] == '\0')
+			if (format[i + 1] == '\0' || format[i + 1] == ' ')
 			{
 				return (-1);
 			}
-			/**
-			* if (format[i + 1] == '%')
-			{
-				i++;
-				j += _put_char('%');
-			}
-			*/
+
 			str = get_format(format[++i], args);
 			if (str != NULL)
 			{
