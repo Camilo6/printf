@@ -12,14 +12,17 @@ char *get_format(const char format, va_list args)
 	char operator;
 	char *s;
 	sp formato[] = {/* sp: Search parameter*/
-		{'c', sp_char },
+		{'c', sp_char},
 		{'%', sp_percentsign},
-		{'s', sp_string },
+		{'s', sp_string},
 		/**
-		*,
+		 * {'d', sp_number },
+		 * {'i', sp_number },
+		 */
+		/**
+		 *
+		 *,
 			{'b', convert_binary },
-			{'d', sp_decimal },
-			{'i', sp_integer},
 			{'u', sp_unsigned },
 			{'o', sp_octal },
 			{'x', sp_hexi },
@@ -35,6 +38,10 @@ char *get_format(const char format, va_list args)
 		{
 			s = (formato[j].op(args));
 			return (s);
+			if (s == NULL)
+			{
+				return (NULL);
+			}
 		}
 	}
 	return (0);
