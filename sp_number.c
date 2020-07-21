@@ -7,10 +7,10 @@
 char *sp_number(va_list args)
 {
 	int n = va_arg(args, int);
-	char *buf;
+	char *x;
+	char buf[20];
 	unsigned int i, j = 1, nm = 0;
 
-	buf = malloc(sizeof(char) * 20);
 	if (n < 0)
 	{
 		n = -n;
@@ -36,6 +36,6 @@ char *sp_number(va_list args)
 			nm++;
 		}
 	}
-
-	return (buf);
+	x = buf;
+	return (x);
 }
