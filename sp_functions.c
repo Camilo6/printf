@@ -42,7 +42,7 @@ char *sp_char(va_list args)
 		free(str);
 		return (NULL);
 	}
-	str[0] = a;	
+	str[0] = a;
 	free(str);
 	return (str);
 }
