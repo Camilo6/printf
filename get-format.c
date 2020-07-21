@@ -1,4 +1,5 @@
 #include "holberton.h"
+#define NULL ((void *)0)
 char *sp_number(va_list args);
 /**
  * get_format - fygh
@@ -18,16 +19,6 @@ char *get_format(const char format, va_list args)
 		{'s', sp_string},
 		{'d', sp_number},
 		{'i', sp_number},
-		/**
-		 *
-		 *,
-			{'b', convert_binary },
-			{'u', sp_unsigned },
-			{'o', sp_octal },
-			{'x', sp_hexi },
-			{'p', sp_address },
-			{'r', sp_reverse},
-		  */
 		{'\0', NULL}
 		};
 	operator = format;
