@@ -11,6 +11,10 @@ char *sp_number(va_list args)
 	unsigned int i, j = 1, nm = 0;
 
 	buf = malloc(sizeof(char) * 20);
+	if (buf == NULL)
+	{
+		free(buf);
+	}
 	if (n < 0)
 	{
 		n = -n;
