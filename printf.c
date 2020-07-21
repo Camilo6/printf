@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int j = 0;
 	char *str;
 	char tmp[2];
-	char buf[1024];
+	char buf[2048];
 
 	va_list args;
 
@@ -34,7 +34,6 @@ int _printf(const char *format, ...)
 			{
 				return (-1);
 			}
-
 			str = get_format(format[++i], args);
 			if (str != NULL)
 			{
