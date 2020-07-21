@@ -10,7 +10,7 @@ char *sp_number(va_list args)
 	char *buf;
 	unsigned int i, j = 1, nm = 0;
 
-	buf = malloc(sizeof(char) * 20);
+	buf = malloc(100);
 	if (buf == NULL)
 	{
 		free(buf);
