@@ -17,7 +17,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return (0);
+		return (-1);
 	}
 	va_start(args, format);
 
@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '\0')
 			{
-				return (0);
+				return (-1);
 			}
 
 			str = get_format(format[++i], args);
