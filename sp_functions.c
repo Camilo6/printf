@@ -10,7 +10,7 @@ char *sp_string(va_list args)
 
 	if (str == NULL)
 	{
-		str = NULL;
+		str = "(null)";
 	}
 	return (str);
 }
@@ -40,7 +40,7 @@ char *sp_char(va_list args)
 	if (str == NULL)
 	{
 		free(str);
-		return (0);
+		return (NULL);
 	}
 	str[0] = a;
 	free(str);
