@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if (!format || format[i] == '\n' || format[i] == '\0' || !format[i + 1])
+	if (!format)
 	{
 		return (-1);
 	}
@@ -30,7 +30,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			if (format[i + 1] == '\0' || format[i + 1] == ' ')
+			if (format[i] == '\n' || format[i] == '\0' ||
+			 (format[i] == '%' && !format[i + 1]))
 			{
 				return (-1);
 			}
@@ -42,7 +43,6 @@ int _printf(const char *format, ...)
 				if (str == '\0')
 				{
 					j++;
-					break;
 				}
 			}
 			else
@@ -51,7 +51,6 @@ int _printf(const char *format, ...)
 				tmp[1] = format[i];
 				_strcpy(buf + j, tmp);
 				j += 1;
-
 			}
 		}
 	}
@@ -74,10 +73,8 @@ char *_strcpy(char *dest, char *src)
 	{
 		*(dest + i) = *(src + i);
 	}
-
 	return (dest);
 }
-
 /**
  * _strlen - returns the length of a string
  * @s: character
