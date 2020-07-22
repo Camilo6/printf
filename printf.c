@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			if (format[i] == '\n' || format[i] == '\0' ||
+			if (!format || format[i] == '\n' || format[i] == '\0' ||
 			 (format[i] == '%' && !format[i + 1]))
 			{
 				return (-1);
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			{
 				_strcpy(buf + j, str);
 				j += _strlen(str) - 1;
-				if (str[j] == '\0')
+				if (str[0] == '\0')
 				{
 					j++;
 				}
