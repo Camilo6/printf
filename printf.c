@@ -40,10 +40,11 @@ int _printf(const char *format, ...)
 			{
 				_strcpy(buf + j, str);
 				j += _strlen(str) - 1;
-				if (str == '\0')
+				if (str[0] == '\0')
 				{
 					j++;
 				}
+				
 			}
 			else
 			{
