@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			{
 				_strcpy(buf + j, str);
 				j += _strlen(str) - 1;
-				if (str[0] == '\0')
+				if (format[i + 1] == 'c' && str[0] == '\0')
 				{
 					j++;
 				}
@@ -55,7 +55,6 @@ int _printf(const char *format, ...)
 		}
 	}
 	buf[j] = '\0';
-	va_end(args);
 	write(1, buf, j);
 	return (j);
 }
