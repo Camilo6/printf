@@ -1,16 +1,15 @@
 #include "holberton.h"
-#define NULL ((void *)0)
 char *sp_number(va_list args);
 /**
- * get_format - fygh
- * @format: ghjk
- * @args: gjhk
+ * get_format - searches for the format specifier
+ * @format: pointer to the format specifier
+ * @args: va_list args
  * Return: char
  */
 
 char *get_format(const char format, va_list args)
 {
-	int j;
+	unsigned int j;
 	char operator;
 	char *s;
 	sp formato[] = {/* sp: Search parameter*/
@@ -34,5 +33,5 @@ char *get_format(const char format, va_list args)
 			return (s);
 		}
 	}
-	return (0);
+	return (NULL);
 }

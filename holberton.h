@@ -16,7 +16,6 @@ typedef struct search
 	char form;
 	char *(*op)(va_list args);
 } sp;
-
 char *get_format(const char format, va_list args);
 char *sp_char(va_list args);
 int _printf(const char *format, ...);
@@ -24,4 +23,5 @@ char *sp_percentsign(va_list args);
 int _put_char(char c);
 char *sp_string(va_list args);
 char *sp_number(va_list args);
+
 #endif /*PRINTF*/
