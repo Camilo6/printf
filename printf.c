@@ -18,10 +18,11 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if (!format)
-	{
-		return (-1);
-	}
+	if (!format || format[i] == '\n' || format[i] == '\0' ||
+			 (format[i] == '%' && !format[i + 1]))
+			{
+				return (-1);
+			}
 	for (i = 0; format && format[i]; i++, j++)
 	{
 		if (format[i] != '%')
@@ -30,17 +31,12 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			if (format[i] == '\n' || format[i] == '\0' ||
-			 (format[i] == '%' && !format[i + 1]))
-			{
-				return (-1);
-			}
 			str = get_format(format[++i], args);
 			if (str != NULL)
 			{
 				_strcpy(buf + j, str);
 				j += _strlen(str) - 1;
-				if (format[i + 1] == 'c' && str[0] == '\0')
+				if ( str[0] == '\0')
 				{
 					j++;
 				}
