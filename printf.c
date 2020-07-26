@@ -17,14 +17,11 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	if (buf == NULL)
+	if (buf == NULL || !format)
 	{
 		return (-1);
 	}
-	if (!format)
-	{
-		return (-1);
-	}
+	
 	for (i = 0; format && format[i]; i++, j++)
 	{
 		if (format[i] != '%')
