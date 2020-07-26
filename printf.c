@@ -18,6 +18,10 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
+	if (buf == NULL)
+	{
+		return (-1);
+	}
 	if (!format)
 	{
 		return (-1);
@@ -40,8 +44,10 @@ int _printf(const char *format, ...)
 			{
 				_strcpy(buf + j, str);
 				j += _strlen(str) - 1;
-				if (str[0] == '\0')
+				if (format[i + 1] == 'c' && str[0] == '\0')
+				{
 					j++;
+				}
 			}
 			else
 			{
