@@ -14,6 +14,7 @@ char *sp_number(va_list args)
 	if (buf == NULL)
 	{
 		free(buf);
+		return (NULL);
 	}
 	if (n < 0)
 	{
@@ -40,6 +41,5 @@ char *sp_number(va_list args)
 			nm++;
 		}
 	}
-
 	return (buf);
 }
