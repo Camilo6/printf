@@ -38,26 +38,24 @@ We use this function to copy the string to the buffer in the specific lines(41, 
 |`man_3_printf`	|manual for the printf function					   |
 
 ------
-## Example 
+## Example
 
 ```C
 #include "holberton.h"
 /**
  * main - Entry point
- * @s: character
  * Return: 0 Success
  */
 int main(void)
 {
-        char *s = "is ";
+    	char *s = "is ";
 		_printf("This ");
-        _printf("%s", s);
-        _printf("The function ");
+		_printf("%s", s);
+		_printf("The function ");
 		_printf("%c", 'p');
 		_printf("rintf ");
 		_printf("for julianamonr0%d ", 3);
 		_printf("and Camilo%i\n", 6);
-		
         return (0);
 }
 ```
