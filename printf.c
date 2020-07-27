@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 
-	int i = 0, j = 0, cont = 0;
+	int i = 0, j = 0;
 	char *str;
 	char tmp[2];
 	char buf[2048];
@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	
+
 	for (i = 0; format && format[i]; i++, j++)
 	{
 		if (format[i] != '%')
@@ -42,7 +42,7 @@ int _printf(const char *format, ...)
 				j += _strlen(str) - 1;
 				if (format[i] == 'c' && str[0] == '\0')
 				{
-					cont++;
+					j++, buf[j] = '\0';
 				}
 			}
 			else
@@ -57,7 +57,7 @@ int _printf(const char *format, ...)
 	buf[j] = '\0';
 	write(1, buf, j);
 	va_end(args);
-	return (cont + j);
+	return (j);
 }
 /**
  * *_strcpy - copies string pointed to by src
