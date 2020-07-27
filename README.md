@@ -1,4 +1,5 @@
 # Printf
+
 ## What it's about:
 We're creating our own prinft function, it's part of the Holberton School curriculum.
 ---
@@ -23,6 +24,45 @@ We create a structure in the get-format.c file for listing our functions that ca
 We use this function to copy the string to the buffer in the specific lines(41, 52. printf.c).
 -----
 
+-----
+##
+*Content Description*
+
+| 	File Name   |				 Summary content				   |
+|  		:---:   | 		     		:---: 	 					   |
+|`get-format.c` |Brings the corresponding format to printf function|
+|`holberton.h`  |List prototypes and structure					   |
+|`sp_function.c`|Functions formats c, s, %  					   |
+|`printf.c`	    |Contains printf function						   |
+|`sp_number`	|Function format d and i						   |
+|`man_3_printf`	|manual for the printf function					   |
+
+------
+## Example
+
+```C
+#include "holberton.h"
+/**
+ * main - Entry point
+ * Return: 0 Success
+ */
+int main(void)
+{
+    	char *s = "is ";
+		_printf("This ");
+		_printf("%s", s);
+		_printf("The function ");
+		_printf("%c", 'p');
+		_printf("rintf ");
+		_printf("for julianamonr0%d ", 3);
+		_printf("and Camilo%i\n", 6);
+        return (0);
+}
+```
+*output*
+
+`This is The function printf for julianamonr03 and Camilo6`
+
 ## Authors
-* **Juliana Monroy** - [julianamonr03](https://github.com/julianamonr03)
+* **Juliana Monroy Pérez** - [julianamonr03](https://github.com/julianamonr03)
 * **Julian Camilo Torres** - [Camilo6](https://github.com/Camilo6)
