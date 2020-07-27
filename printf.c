@@ -12,7 +12,6 @@ int _printf(const char *format, ...)
 
 	int i = 0, j = 0, cont = 0;
 	char *str;
-	char tmp[2];
 	char buf[2048];
 
 	va_start(args, format);
@@ -47,9 +46,8 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				tmp[0] = '%';
-				tmp[1] = format[i];
-				_strcpy(buf + j, tmp);
+				buf[j] = '%';
+				buf[j + 1] = format[i];
 				j += 1;
 			}
 		}
