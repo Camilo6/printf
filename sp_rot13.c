@@ -7,19 +7,18 @@ int _strlen(char *s);
  */
 char *sp_rot13(va_list args)
 {
-	int cont, cont2, conts;
+	int cont, cont2;
 	char *str = va_arg(args, char *);
-	char abc[60] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char rot[60] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	char *buf;
+	char abc[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char buf[500];
+	char *new;
 
 	if (str == NULL)
 	{
-
 		return (NULL);
 	}
-	conts = _strlen(str);
-	buf = malloc(sizeof(char) * conts + 1);
+	new = buf + 1;
 	if (buf == NULL)
 	{
 		return (NULL);
@@ -29,9 +28,10 @@ char *sp_rot13(va_list args)
 		for (cont2 = 0; abc[cont2] != '\0'; cont2++)
 			if (str[cont] == abc[cont2])
 			{
-				buf[cont] = rot[cont2];
+				new[cont] = rot[cont2];
 				break;
 			}
 	}
-	return (buf);
+	return (new);
 }
+
