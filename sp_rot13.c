@@ -15,6 +15,7 @@ char *sp_rot13(va_list args)
 
 	if (str == NULL)
 	{
+
 		return (NULL);
 	}
 	conts = _strlen(str);
@@ -32,6 +33,5 @@ char *sp_rot13(va_list args)
 				break;
 			}
 	}
-	free(buf);
 	return (buf);
 }
