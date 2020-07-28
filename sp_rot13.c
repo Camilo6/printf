@@ -9,9 +9,9 @@ char *sp_rot13(va_list args)
 {
 	int cont, cont2;
 	char *str = va_arg(args, char *);
-	char abc[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	char buf[500];
+	char abc[] = "?!;'@-=+\"\\$%^&*()`~<>/:[_5]{}|.\n ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ,";
+	char rot[] = "?!;'@-=+\"\\$%^&*()`~<>/:[_]{}|.\n NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm  ,";
+	char buf[800];
 	char *new;
 
 	if (str == NULL)
@@ -34,4 +34,3 @@ char *sp_rot13(va_list args)
 	}
 	return (new);
 }
-
